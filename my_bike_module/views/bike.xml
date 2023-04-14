@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="bike_search_view" model="ir.ui.view">
+        <field name="name">Bikes Search</field>
+        <field name="model">bike.bikes</field>
+        <field name="arch" type="xml">
+            <search string="Bike Search">
+<!--                group-->
+                <group expand="1" string="Group by ..">
+                    <filter name="filter_3" string="Name" domain="[]" context="{'group_by':'name'}"/>
+                </group>
+
+
+<!--                filter-->
+                <filter string="Petrol Bikes" name="filter_1" domain="[('fuel_type','=','petrol')]"/>
+                <filter string="Diesel Bikes" name="filter_1" domain="[('fuel_type','=','diesel')]"/>
+                <filter string="EV Bikes" name="filter_1" domain="[('fuel_type','=','ev')]"/>
+            </search>
+        </field>
+    </record>
+
+
+    <record id="bike_form" model="ir.ui.view">
+        <field name="name">Bikes</field>
+        <field name="model">bike.bikes</field>
+        <field name="arch" type="xml">
+        <form>
+            <sheet>
+                <header>
+                    <field name="status" widget="statusbar"/>
+                    <button name="%(bike_wizard_action)d" string="Update" type="action" class="oe_highlight"/>
+                    <button name="set_bike_sold" string="Set Bike Sold" type="object" class="oe_highlight"
+                            attrs="{'invisible':[('status','!=','new')]}"/>
+                    <button name="check" string="Check" type="object" class="oe_highlight"/>
+
+                </header>
+                <group>
+                <group>
+                <field name="name"/>
+                <field name="bike_pic" widget="image"/>
+                </group>
+                <group>
+                <field name="bike_sequence" readonly="1"/>
+                <field name="rider_needed"/>
+                <field name="rider_id" attrs="{'invisible':[('rider_needed','==',False)]}"/>
+                <field name="fuel_type"/>
+                <field name="price"/>
+                <field name="month"/>
+                <field name="emi"/>
+                <field name="insurance_expiry_date"/>
+                </group>
+                </group>
+            </sheet>
+        </form>
+        </field>
+    </record>
+            <record id="bike_tree" model="ir.ui.view">
+                <field name="name">bike.tree</field>
+                <field name="model">bike.bikes</field>
+                <field name="arch" type="xml">
+                    <tree>
+                        <field name="name"/>
+                        <field name="rider_id"/>
+                        <field name="fuel_type"/>
+                        <field name="insurance_expiry_date"/>
+                    </tree>
+                </field>
+            </record>
+
+    <record id="bike_action" model="ir.actions.act_window">
+        <field name="name">Bikes</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">bike.bikes</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{"search_default_filter_1":1,"search_default_filter_3":1}</field>
+    </record>
+
+    <menuitem id="bike_menu" name="Bikes" sequence="1" action="bike_action"/>
+
+</odoo>

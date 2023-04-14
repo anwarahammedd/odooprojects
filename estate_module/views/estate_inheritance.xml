@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+<!--    <record id="inherit_form_form" model="ir.ui.view">-->
+<!--        <field name="name">Inherit User</field>-->
+<!--        <field name="model">res.partner</field>-->
+<!--        <field name="inherit_id" ref="base.view_users_form"/>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <xpath expr="//form/sheet/notebook/page[@name='references']" position="after">-->
+<!--                <page name="New" string="Estate Property">-->
+<!--                    <field name="sales_person" domain="[('status2','=','new')]"/>-->
+<!--                </page>-->
+<!--            </xpath>-->
+<!--        </field>-->
+<!--    </record>-->
+</odoo>

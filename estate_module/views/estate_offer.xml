@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+<!--    <record id="estate_tree" model="ir.ui.view">-->
+<!--        <field name="name">Offers</field>-->
+<!--        <field name="model">estate.property.offer</field>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <tree>-->
+<!--                <field name="offer_count"/>-->
+<!--                <field name="partner"/>-->
+<!--                <field name="offer_id"/>-->
+<!--            </tree>-->
+<!--        </field>-->
+<!--    </record>-->
+<!--    <record id="offer_action" model="ir.actions.act_window">-->
+<!--        <field name="name">Offer</field>-->
+<!--        <field name="res_model">estate.property.offer</field>-->
+<!--        <field name="view_mode">tree,form</field>-->
+<!--    </record>-->
+</odoo>

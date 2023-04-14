@@ -1,0 +1,22 @@
+{
+    'name':'bike_module',
+    'summary':"",
+    'description':"",
+    'author':'Bike Company',
+    'website':'',
+    'category':'',
+    'version':'1.0',
+    'depends':['base','mail'],
+    'data':[
+        'security/ir.model.access.csv',
+        'views/bike.xml',
+        'views/sequence.xml',
+        'views/res_partner_inherit_form_view.xml',
+        'wizard/bike_wizard.xml',
+        'data/bike_template_mail.xml',
+        'views/security.xml',
+        'views/rules.xml',
+        ],
+    'demo':[],
+    'installable': True,
+}

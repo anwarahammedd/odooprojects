@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="vehicle_action" model="ir.actions.act_window">
+        <field name="name">Vehicles</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">vehicle.vehicles</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem id="vehicle_menu" name="Vehicles" sequence="1" action="vehicle_action"/>
+</odoo>

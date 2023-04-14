@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!--    Form view car-->
+    <record id="car_form" model="ir.ui.view">
+        <field name="name">Cars</field>
+        <field name="model">car.car</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <header>
+                        <field name="status" widget="statusbar"/>
+                        <button name="set_car_to_used" string="Set Car To Used" type="object" class="oe_highlight" attrs="{'invisible':[('status','!=','new')]}"/>
+                        <button name="set_car_to_sold" string="Set Car to Sold" type="object" class="oe_highlight" attrs="{'invisible':[('status','!=','used')]}"/>
+                    </header>
+                    <group>
+                        <group>
+                            <field name="driver_hi"/>
+                                 <field name="name"/>
+                            <field name="image" widget="image"/>
+                              <field name="horse_power"/>
+                            <field name="door_number"/>
+                        </group>
+                        <group>
+                            <field name="driver_id"/>
+                            <field name="top_speed"/>
+                            <field name="features" widget="many2many_tags"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!--Tree view car-->
+    <record id="car_tree" model="ir.ui.view">
+        <field name="name">car.form</field>
+        <field name="model">car.car</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="horse_power"/>
+                <field name="door_number"/>
+                <field name="driver_id"/>
+            </tree>
+        </field>
+    </record>
+    <!--Action View car-->
+    <record id="car_action" model="ir.actions.act_window">
+        <field name="name">Cars</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">car.car</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!--    menu car-->
+    <menuitem id="car_menu" name="Cars" sequence="2" action="car_action"/>
+
+
+</odoo>

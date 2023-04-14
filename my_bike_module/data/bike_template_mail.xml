@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="bike_mail_template" model="mail.template">
+                <field name="name">Bike Email Template</field>
+                <field name="email_from">${user.email}</field>
+                <field name="email_to">${user.email}</field>
+                <field name="subject">Bike Solded ${object.name}</field>
+                <field name="lang">${object.lang}</field>
+                <field name="model_id" ref="model_bike_bikes"/>
+                <field name="auto_delete" eval="True"/>
+                <field name="body_html">
+                    <![CDATA[
+                    Hello Sir , ${object.name} <br/>
+                    Congratulation for the bike <br/>
+                    Price : ${object.price} <br/>
+                    Total Months : ${object.month} <br/>
+                    <br/>
+                    Best Regards.
+                    ]]>
+                </field>
+        </record>
+    </data>
+</odoo>

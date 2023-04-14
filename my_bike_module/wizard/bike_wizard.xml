@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="bike_wizard_action" model="ir.actions.act_window">
+        <field name="name">Add Price For Bike</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">bike.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+<!--        <field name="binding_model_id" ref="my_bike_module." />-->
+    </record>
+    <record id="bike_real_price_form" model="ir.ui.view">
+        <field name="name">bike.wizard.form</field>
+        <field name="model">bike.wizard</field>
+        <field name="arch" type="xml">
+<!--            form-->
+            <form>
+                <group>
+                    <field name="price_plus"/>
+                </group>
+                <footer>
+                    <button string="Confirm" name="add_price" type="object" class="btn-primary"/>
+                    <button string="Cancel" class="btn-default" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+<!--    <act_windows id="wizard_action_window_bike" name="Bike Wizard" binding_model="bike.bikes" res_model="bike.wizard" view_mode="form" target="new"/>-->
+</odoo>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+<!--    form-->
+<!--    <record id="property_form" model="ir.ui.view">-->
+<!--        <field name="name">Property Type</field>-->
+<!--        <field name="model">property.type.types</field>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <form>-->
+<!--                <group>-->
+<!--                    <field name="name"/>-->
+<!--                </group>-->
+<!--                                    <notebook>-->
+<!--                        <page string="Properties">-->
+<!--                            <field name="property_id">-->
+<!--                                <tree>-->
+<!--                                    <field name="name"/>-->
+<!--                                    <field name="status"/>-->
+<!--                                    <field name="expected_price"/>-->
+<!--                                </tree>-->
+<!--                            </field>-->
+<!--                        </page>-->
+<!--                    </notebook>-->
+<!--            </form>-->
+<!--        </field>-->
+<!--    </record>-->
+<!--    tree-->
+    <record id="estate_property_tree" model="ir.ui.view">
+        <field name="name">Estate Property Tree</field>
+        <field name="model">property.type.types</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+            </tree>
+        </field>
+
+    </record>
+<!--    action-->
+    <record id="property_actions" model="ir.actions.act_window">
+        <field name="name">Property Name</field>
+        <field name="res_model">property.type.types</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+<!--    menu-->
+    <menuitem id="property_settings" name="Settings" parent="real_estate_menu_actions" sequence="1"/>
+    <menuitem id="property_details" name="Property Type" parent="property_settings" sequence="1" action="property_actions"/>
+<!--    <menuitem id="seller_details" name="Seller Details" parent="menu_customer_details" sequence="2" action="estate_actions"/>-->
+</odoo>

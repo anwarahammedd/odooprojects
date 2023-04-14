@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+access_bike_bike,Access User Bike,model_bike_bikes,my_bike_module.group_user,1,0,0,0
+access_Manager,Access Manager Vehicle,model_bike_bikes,my_bike_module.group_manager,1,1,1,0
+access_Super_Manger,Access Super Manager Vehicle,model_bike_bikes,my_bike_module.group_super_manager,1,1,1,1
+
+access_bike_wizard,name.bike.wizard,model_bike_wizard,,1,,1,1
